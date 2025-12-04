@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Info Webpage</title>
+
+    <style>
+        /* --- BASIC SETUP --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            margin: 20px;
+            text-align: center;
+            overflow-x: hidden; /* Allows vertical scroll, hides horizontal */
+        }
+
+        /* --- SCROLL ANIMATION CLASSES --- */
+        .hidden {
+            opacity: 0;
+            filter: blur(5px);
+            transform: translateY(50px);
+            transition: all 0.5s ease-out;
+        }
+
+        .show {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0);
+        }
+
+        /* --- TYPEWRITER CURSOR ANIMATION --- */
+        .highlight-text {
+            color: #ff3333; /* Changed to Neon Red */
+            font-weight: bold;
+        }
+        
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: #e0e0e0;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* --- HEADER STYLING --- */
+        header {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: #cc0000; /* Changed to Dark Red */
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: #800000 0px 0px 10px; /* Changed to Deep Maroon Shadow */
+        }
+
+        h2 {
+            font-family: 'Arial Black', Gadget, sans-serif;
+            color: #990000; /* Changed to Blood Red */
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        /* --- NEON HR --- */
+        hr {
+            border: 0;
+            height: 2px;
+            background-color: #ff3333; /* Changed to Neon Red */
+            width: 80%;
+            margin: 60px auto;
+            box-shadow: 0 0 15px #ff3333; /* Red Glow */
+            border-radius: 5px;
+        }
+
+        /* --- SECTIONS & TABLE --- */
+        section {
+            margin-bottom: 40px;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        table {
+            margin: 0 auto;
+            border-color: #333;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            width: 80%;
+            box-shadow: 0 0 10px #ff3333; /* Red Glow */
+            border-radius: 10px;
+            overflow: hidden;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #2d2d2d;
+            color: #ff3333; /* Red Text */
+            padding: 10px;
+            font-size: 1.2em;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        /* --- IMAGE STYLING --- */
+        img {
+            border-radius: 15px;
+            box-shadow: 0 0 15px #800000; /* Deep Red Shadow */
+        }
+
+        /* --- LINKS --- */
+        a {
+            color: #ff3333; /* Red Link */
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 1.1em;
+            text-shadow: 0 0 5px #ff3333;
+        }
+
+        a:hover {
+            text-decoration: dashed underline;
+            color: #ff6666; /* Lighter Red on Hover */
+            text-shadow: 0 0 10px #ff6666;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            font-size: smaller;
+            color: darkgrey;
+            margin-top: 40px;
+            text-align: center;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="hidden">
+        <!-- 1. THE COOL ZALGO TEXT -->
+        <h1>ƳØKȺŞȺ¡ ꞶȺƬȺŞꜦḮ ꞶȺ ƤƐɌŞØŊȺȽ ƤȺǤƐ🫠</h1>
+        
+        <!-- 2. THE TYPEWRITER EFFECT -->
+        <p style="margin: 0 auto; width: 80%; font-size: 1.5em; min-height: 1.5em;">
+            Hi! I'm Alvington - 
+            <span class="highlight-text" id="typewriter"></span><span class="cursor">&nbsp;</span>
+        </p>
+        
+        <p style="margin: 10px auto; width: 60%; font-size: 1.1em; color: #aaa;">
+            I am an IT student passionate about Web development and Programming.
+        </p>
+    </header>
+
+    <hr class="hidden">
+
+    <section class="hidden">
+        <h2>Personal Profile</h2>
+        <img src="Zen.png" alt="Alvin Mutahi" width="300" height="200">
+        <p style="margin-top: 20px;">
+            I am currently pursuing a degree in Information Technology. <br>
+            My interests include web development, software engineering, and cybersecurity. <br>
+        </p>
+        <p>
+            Feel free to connect with me on my social media platforms:
+            <a href="#" title="LinkedIn Profile" target="_blank">LinkedIn</a> |
+            <a href="https://github.com/Alvington" title="GitHub Profile" target="_blank">GitHub</a>
+        </p>
+    </section>
+
+    <hr class="hidden">
+
+    <section class="hidden">
+        <h2>My Hobbies</h2>
+        <!-- Updated inline styles for the box shadow and h3 colors below -->
+        <div style="text-align: left; display: inline-block; max-width: 600px; background-color: #111; padding: 30px; border-radius: 20px; box-shadow: 0 0 15px #ff3333; border: 1px solid #333;">
+            <h3 style="color: #ff3333;">Personal Goals </h3>
+            <ol>
+                <li>Graduate with at least Second Class Upper</li>
+                <li>Start my own Tech company by 30 years</li>
+                <li>Buy a German Machine</li>
+                <li>Travel the world starting with Paris</li>
+            </ol>
+            <h3 style="color: #ff3333;">Hobbies and Interests</h3>
+            <ul>
+                <li>Coding and building web applications</li>
+                <li>Playing video games</li>
+                <li>Binging Anime and Netflix</li>
+                <li>Exploring new programming languages</li>
+                <li>Listening to Spotify</li>
+                <li>Gym workouts</li>
+                <li>Fine dining</li>
+            </ul>
+        </div>
+    </section>
+
+    <hr class="hidden">
+
+    <section class="hidden">
+        <h2>Weekly Schedule</h2>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Classes</td>
+                    <td>Classes</td>
+                    <td>Coding</td>
+                    <td>Design</td>
+                    <td>Classes</td>
+                </tr>
+                <tr>
+                    <td>Lunch</td>
+                    <td>Gym</td>
+                    <td>Lunch</td>
+                    <td>Gym</td>
+                    <td>Lunch</td>
+                </tr>
+                <tr>
+                    <td>Study</td>
+                    <td>Gym</td>
+                    <td>Study</td>
+                    <td>Gym</td>
+                    <td>Party</td>
+                </tr>
+                <tr>
+                    <td>Sleep</td>
+                    <td>Sleep</td>
+                    <td>Sleep</td>
+                    <td>Sleep</td>
+                    <td>Party</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <hr class="hidden">
+
+    <footer class="hidden">
+        <p> Alvin Mutahi <br>
+            SCT221-0089/2024 <br>
+            &copy; 2025 Project
+        </p>
+    </footer>
+
+    <!-- JAVASCRIPT SECTION -->
+    <script>
+        // --- 1. SCROLL LOOP ANIMATION ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Show when on screen
+                    entry.target.classList.add('show');
+                } else {
+                    // Hide when off screen (Loop effect)
+                    entry.target.classList.remove('show');
+                }
+            });
+        });
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+
+
+        // --- 2. TYPEWRITER LOGIC ---
+        const words = ["Coder", "Programmer", "Web Developer", "Gamer", "Software Engineer"];
+        const textElement = document.getElementById("typewriter");
+        
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            const currentWord = words[wordIndex];
+            
+            if (isDeleting) {
+                textElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                textElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 100 : 200;
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                typeSpeed = 2000; // Pause at end of word
+                isDeleting = true;
+            } 
+            else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex++;
+                if (wordIndex === words.length) {
+                    wordIndex = 0;
+                }
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+
+        // Start typing when page loads
+        document.addEventListener('DOMContentLoaded', typeEffect);
+    </script>
+</body>
+
+</html>
