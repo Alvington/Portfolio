@@ -4,156 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Info Webpage</title>
+    <!-- Android Chrome Address Bar Color -->
+    <meta name="theme-color" content="#0a0a0a">
+    <title>Alvin Mutahi | Portfolio</title>
 
     <style>
         /* --- BASIC SETUP --- */
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #e0e0e0;
+            --primary-red: #ff3333;
+            --dark-red: #800000;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0a0a0a;
-            color: #e0e0e0;
-            margin: auto;
-            padding: auto;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0; /* Reset margin for mobile */
+            padding: 0;
             text-align: center;
-            overflow-x: hidden;
-        }
-
-        /* --- HEADER STYLING --- */
-        header {
-            margin-bottom: 80px;
-            font-size: medium;
-            padding: 20px;
-        }
-
-        h1 {
-            color: #cc0000;
-            font-family: 'Courier New', Courier, monospace;
-            text-align: center;
-            font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: #f42020 0px 0px 10px;
-        }
-
-        h2 {
-            font-family: 'Arial Black', Gadget, sans-serif;
-            color: #f71a1a;
-            text-align: center;
-            font-size: 2em;
-            margin-bottom: 30px;
-            text-shadow: #f92d2d 0px 0px 10px;
-            text-transform: uppercase;
-        }
-
-        h3 {
-            color: #ff3333;
-            text-align: center;
-            font-size: 1.5em;
-            margin-bottom: 20px;
-            text-shadow: #ff6666 0px 0px 8px;
-        }
-
-        /* --- NEON HR --- */
-        hr {
-            border: 0;
-            height: 2.5px;
-            background-color: #ff3333;
-            width: 80%;
-            margin: 60px auto;
-            box-shadow: #ff3333 0 0 15px;
-            border-radius: 5px;
-        }
-
-        /* --- SECTIONS & TABLE --- */
-        section {
-            margin-bottom: 100px;
-            margin-top: 60px;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        table {
-            margin: auto;
-            border-color: #333;
-            background-color: #1a1a1a;
-            color: #e0e0e0;
-            width: 80%;
-            box-shadow: 0 0 10px #ff3333;
-            border-radius: 10px;
-            overflow: hidden;
-            border-collapse: collapse;
-            min-width: 500px;
-        }
-
-        .table-wrapper {
-            overflow-x: auto;
-            /* Makes table scrollable on mobile */
-            width: 90%;
-            margin: 0 auto;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(255, 51, 51, 0.3);
-        }
-
-        th {
-            background-color: #2d2d2d;
-            color: #ff3333;
-            padding: 15px;
-            font-size: 1.1em;
-            text-transform: uppercase;
-            border: 1px solid #333;
-        }
-
-        td {
-            padding: 12px;
-            text-align: center;
-            border: 1px solid #333;
-            transition: background-color 0.3s ease;
-        }
-
-        td:hover {
-            background-color: #330000;
-        }
-
-        /* --- GLASSMORPHISM CARD (Hobbies) --- */
-        .glass-panel {
-            text-align: left;
-            display: inline-block;
-            width: 90%;
-            max-width: 600px;
-            background-color: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(255, 51, 51, 0.2);
-            border: 1px solid #333;
-        }
-
-        .glass-panel h3 {
-            color: var(--primary-red);
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
-
-        .glass-panel li {
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
-
-        /* --- IMAGE STYLING --- */
-        img {
-            border-radius: 50%;
-            border: 4px solid #ff3333;
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            box-shadow: 0 0 20px #800000;
-            transition: all 0.3s ease;
-        }
-
-        img:hover {
-            box-shadow: 0 0 30px #ff3333;
-            transform: scale(1.05);
-            transition: all 0.3s ease;
+            overflow-x: hidden; /* Prevent horizontal scroll on body */
+            -webkit-tap-highlight-color: transparent; /* Removes blue highlight on tap */
         }
 
         /* --- NAVIGATION --- */
@@ -161,71 +33,199 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: rgba(62, 2, 2, 0.8);
+            background-color: rgba(10, 10, 10, 0.95); /* Darker for better contrast */
             backdrop-filter: blur(10px);
             padding: 15px 0;
             z-index: 1000;
-            border-top: 1px solid #545353;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allows wrapping on very small screens */
         }
 
         nav a {
-            margin: 0 20px;
-            color: #ff3333;
+            margin: 0 15px;
+            color: var(--primary-red);
             text-decoration: none;
             font-weight: bold;
             transition: all 0.3s ease;
-            font-size: larger;
-            text-shadow: 0 0 5px #ff3333;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        nav a:hover {
-            text-decoration: dashed underline;
+        nav a:active, nav a:hover {
             color: #ff6666;
             text-shadow: 0 0 10px #ff6666;
         }
 
-        /* --- BUTTON LINKS --- */
+        /* --- HEADER STYLING --- */
+        header {
+            margin-top: 100px; /* Push down to account for fixed nav */
+            margin-bottom: 50px;
+            padding: 0 15px;
+        }
+
+        h1 {
+            color: #cc0000;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            font-size: 2.5em; /* Default desktop size */
+            margin-bottom: 10px;
+            text-shadow: #f42020 0px 0px 10px;
+            word-wrap: break-word; /* Prevents long text from breaking layout */
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-family: 'Arial Black', Gadget, sans-serif;
+            color: #f71a1a;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: #f92d2d 0px 0px 10px;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            color: var(--primary-red);
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            text-shadow: #ff6666 0px 0px 8px;
+        }
+
+        /* --- NEON HR --- */
+        hr {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-red), transparent);
+            width: 85%;
+            margin: 50px auto;
+            box-shadow: 0 0 10px var(--primary-red);
+        }
+
+        /* --- SECTIONS --- */
+        section {
+            margin-bottom: 80px;
+            padding: 0 15px;
+            scroll-margin-top: 100px; /* Fixes anchor link positioning */
+        }
+
+        /* --- IMAGES --- */
+        img {
+            border-radius: 50%;
+            border: 3px solid var(--primary-red);
+            width: 250px;
+            height: 250px;
+            max-width: 80%; /* Responsive width */
+            height: auto;   /* Maintain aspect ratio */
+            object-fit: cover;
+            box-shadow: 0 0 20px var(--dark-red);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover, img:active {
+            box-shadow: 0 0 30px var(--primary-red);
+            transform: scale(1.02);
+        }
+
+        /* --- GLASSMORPHISM CARD --- */
+        .glass-panel {
+            text-align: left;
+            display: inline-block;
+            width: 90%;
+            max-width: 600px;
+            background-color: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px); /* Safari/iOS support */
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(255, 51, 51, 0.15);
+            border: 1px solid #333;
+            box-sizing: border-box; /* Ensures padding doesn't increase width */
+        }
+
+        .glass-panel ul, .glass-panel ol {
+            padding-left: 20px;
+        }
+
+        .glass-panel li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        /* --- TABLE STYLING --- */
+        .table-wrapper {
+            overflow-x: auto; /* Critical for mobile tables */
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 51, 51, 0.2);
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #1a1a1a;
+            min-width: 600px; /* Forces scroll on small screens */
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #333;
+            text-align: center;
+        }
+
+        th {
+            background-color: #2d2d2d;
+            color: var(--primary-red);
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        /* --- BUTTONS --- */
         .social-links {
-            margin-top: 20px;
+            margin-top: 25px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
-            padding: 10px 20px;
-            border: 1px solid #ff3333;
-            color: #ff3333;
-            border-radius: 5px;
+            padding: 12px 25px; /* Larger touch target */
+            border: 1px solid var(--primary-red);
+            color: var(--primary-red);
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            background: rgba(0,0,0,0.3);
             transition: all 0.3s ease;
-            background: transparent;
         }
 
-        .btn:hover {
-            background-color: #ff3333;
+        .btn:active, .btn:hover {
+            background-color: var(--primary-red);
             color: #000;
-            box-shadow: 0 0 15px #ff3333;
-            text-decoration: none;
+            box-shadow: 0 0 20px var(--primary-red);
         }
 
         /* --- FOOTER --- */
         footer {
-            font-size: smaller;
-            color: darkgrey;
-            text-align: center;
-            padding: 40px 20px 20px 20px;
+            font-size: 0.9em;
+            color: #888;
+            padding: 40px 20px;
             border-top: 1px solid #222;
         }
 
-        /* --- SCROLL ANIMATION CLASSES --- */
+        /* --- ANIMATIONS --- */
         .hidden {
             opacity: 0;
             filter: blur(5px);
-            transform: translateY(50px);
-            transition: all 0.5s ease-out;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
         }
 
         .show {
@@ -234,30 +234,63 @@
             transform: translateY(0);
         }
 
-        /* --- TYPEWRITER CURSOR ANIMATION --- */
         .highlight-text {
-            color: #ff3333;
+            color: var(--primary-red);
             font-weight: bold;
-            text-shadow: 0 0 10px #ff3333;
+            text-shadow: 0 0 8px var(--primary-red);
         }
 
         .cursor {
             display: inline-block;
             width: 3px;
-            background-color: #e0e0e0;
+            background-color: var(--text-color);
             animation: blink 1s infinite;
-            margin-left: 2px;
         }
 
         @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
 
-            0%,
-            100% {
-                opacity: 1;
+        /* --- MOBILE SPECIFIC ADJUSTMENTS (ANDROID) --- */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em; /* Smaller title */
+                padding: 0 10px;
+            }
+            
+            h2 {
+                font-size: 1.5em;
             }
 
-            50% {
-                opacity: 0;
+            nav a {
+                font-size: 0.9em; /* Smaller nav links */
+                margin: 0 8px;
+            }
+
+            .glass-panel {
+                padding: 20px; /* Less padding on mobile */
+                width: 95%;
+            }
+
+            img {
+                width: 200px;
+                height: 200px;
+            }
+
+            p {
+                font-size: 1em !important; /* Ensure text isn't too huge */
+            }
+            
+            /* Stack buttons if screen is very narrow */
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 80%; /* Full width buttons on mobile */
+                max-width: 250px;
             }
         }
     </style>
@@ -272,15 +305,15 @@
     </nav>
 
     <header id="home" class="hidden">
+        <!-- Zalgo text kept, but size controlled via CSS -->
         <h1>𝕐𝕆𝕂𝕆𝕊𝕆! 𝕎𝔸𝕋𝔸𝕊ℍ𝕀 ℕ𝕆 ℙ𝔼ℝ𝕊𝕆ℕ𝔸𝕃 ℙ𝔸𝔾𝔼🫠</h1>
 
-        <!-- 2. THE TYPEWRITER EFFECT -->
-        <p style="margin: 0 auto; width: 80%; font-size: 1.5em; min-height: 1.5em;">
+        <p style="margin: 0 auto; width: 90%; font-size: 1.3em; min-height: 1.5em;">
             Hi! I'm Alvington -
             <span class="highlight-text" id="typewriter"></span><span class="cursor">&nbsp;</span>
         </p>
 
-        <p style="margin: 10px auto; width: 60%; font-size: 1.1em; color: #aaa;">
+        <p style="margin: 15px auto; width: 85%; font-size: 1.1em; color: #aaa;">
             I am an IT student passionate about Web development and Programming.
         </p>
     </header>
@@ -289,19 +322,17 @@
 
     <section id="profile" class="hidden">
         <h2>PERSONAL PROFILE</h2>
-        <img src="Zen.png" alt="Alvin Mutahi" width="300" height="200">
+        <img src="Zen.png" alt="Alvin Mutahi">
 
-        <p
-            style="margin-top: 20px;  margin: 10px auto; width: 80%; max-width: 600px; font-size: 1.1em; color: #aaa; line-height: 1.6;">
+        <p style="margin: 20px auto; width: 90%; max-width: 600px; font-size: 1.1em; color: #aaa; line-height: 1.6;">
             I am currently pursuing a degree in Information Technology. <br>
-            My interests include web development, software engineering, and cybersecurity. <br>
+            My interests include web development, software engineering, and cybersecurity.
         </p>
 
         <div class="social-links">
-            <a href="#" class="btn" title="LinkedIn Profile" target="_blank">LinkedIn</a> |
-            <a href="https://github.com/Alvington" class="btn" title="GitHub Profile" target="_blank">GitHub</a>
+            <a href="#" class="btn" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Alvington" class="btn" target="_blank">GitHub</a>
         </div>
-
     </section>
 
     <hr class="hidden">
@@ -309,7 +340,7 @@
     <section id="hobbies" class="hidden">
         <h2>My Hobbies</h2>
         <div class="glass-panel">
-            <h3>Personal Goals </h3>
+            <h3>Personal Goals</h3>
             <ol>
                 <li>Graduate with at least Second Class Upper</li>
                 <li>Start my own Tech company by 30 years</li>
@@ -323,132 +354,4 @@
                 <li>Binging Anime and Netflix</li>
                 <li>Exploring new programming languages</li>
                 <li>Listening to Spotify</li>
-                <li>Gym workouts</li>
-                <li>Fine dining</li>
-            </ul>
-        </div>
-    </section>
-
-    <hr class="hidden">
-
-    <section id="schedule" class="hidden">
-        <h2>WEEKLY SCHEDULE</h2>
-        <div>
-            <p
-                style="margin: 0 auto; width: 80%; font-size: 1.1em; color: #aaa; line-height: 1.6; margin-bottom: 20px;">
-                Below is a sample weekly schedule outlining my typical activities from Monday to Friday.
-            </p>
-
-            <table border="1" cellpadding="10" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th>Monday</th>
-                        <th>Tuesday</th>
-                        <th>Wednesday</th>
-                        <th>Thursday</th>
-                        <th>Friday</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Classes</td>
-                        <td>Classes</td>
-                        <td>Coding</td>
-                        <td>Design</td>
-                        <td>Classes</td>
-                    </tr>
-                    <tr>
-                        <td>Lunch</td>
-                        <td>Gym</td>
-                        <td>Lunch</td>
-                        <td>Gym</td>
-                        <td>Lunch</td>
-                    </tr>
-                    <tr>
-                        <td>Study</td>
-                        <td>Gym</td>
-                        <td>Study</td>
-                        <td>Gym</td>
-                        <td>Party</td>
-                    </tr>
-                    <tr>
-                        <td>Sleep</td>
-                        <td>Sleep</td>
-                        <td>Sleep</td>
-                        <td>Sleep</td>
-                        <td>Party</td>
-                    </tr>
-                </tbody>
-            </table>
-
-        </div>
-
-    </section>
-
-    <hr class="hidden">
-
-    <footer class="hidden">
-        <p> Alvin Mutahi <br>
-            SCT221-0089/2024 <br>
-            &copy; 2025 Project
-        </p>
-    </footer>
-
-    <script>
-        // --- 1. SCROLL LOOP ANIMATION ---
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                } else {
-                    entry.target.classList.remove('show');
-                }
-            });
-        });
-        const hiddenElements = document.querySelectorAll('.hidden');
-        hiddenElements.forEach((el) => observer.observe(el));
-
-
-        // --- 2. TYPEWRITER LOGIC ---
-        const words = ["CODER", "PROGRAMMER", "WEB DEVELOPER", "GAMER", "SOFTWARE ENGINEER", "TECH ENTHUSIAST", "QUICK LEARNER", "PROBLEM SOLVER", "TEAM PLAYER", "CREATIVE THINKER"];
-        const textElement = document.getElementById("typewriter");
-
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        function typeEffect() {
-            const currentWord = words[wordIndex];
-
-            if (isDeleting) {
-                textElement.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                textElement.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            let typeSpeed = isDeleting ? 100 : 200;
-
-            if (!isDeleting && charIndex === currentWord.length) {
-                typeSpeed = 2000; // Pause at end of word
-                isDeleting = true;
-            }
-            else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex++;
-                if (wordIndex === words.length) {
-                    wordIndex = 0;
-                }
-                typeSpeed = 500;
-            }
-
-            setTimeout(typeEffect, typeSpeed);
-        }
-
-        // Start typing when page loads
-        document.addEventListener('DOMContentLoaded', typeEffect);
-    </script>
-</body>
-
-</html>
+                <li>Gym workouts</
